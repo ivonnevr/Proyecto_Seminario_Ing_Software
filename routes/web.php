@@ -13,8 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('equipo-audiovisual', function () {
+    return view('equipo-audiovisual');
+});
+
+Route::get('dlux-dj', function () {
+    return view('dlux-dj');
+});
+
+Route::get('calypso', function () {
+    return view('calypso');
+});
+
+//Modificar esta ruta con la vista del sistema para los usuarios
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/windmill-login');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
