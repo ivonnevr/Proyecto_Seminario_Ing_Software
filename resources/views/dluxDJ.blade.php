@@ -361,7 +361,7 @@ https://templatemo.com/tm-546-sixteen-clothing
               <input type="date" class="form-control" name="fecha" id="fecha" required>
             </div>
             <div class="one-half">
-              <select name="equipo" class="form-control" required>
+              <select name="paquete" class="form-control" required>
                 <option value="none" disabled selected>-- Seleccione el paquete de su interés --</option>
                 <option value="mini">Paquete mini</option>
                 <option value="basico">Paquete básico</option>
