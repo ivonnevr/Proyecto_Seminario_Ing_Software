@@ -16,10 +16,10 @@ class CreateEquiposTable extends Migration
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 100);
-            $table->string('telefono', 15);
+            $table->string('telefono', 30);
             $table->string('correo', 50);
             $table->date('fecha');
-            $table->string('equipo', 25);
+            $table->string('equipo', 30);
             $table->string('lugar', 50);
             $table->string('mensaje', 255);
         });

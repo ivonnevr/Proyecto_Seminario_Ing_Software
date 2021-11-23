@@ -10,4 +10,5 @@ class Calypsocotizacion extends Model
     use HasFactory;
     protected $table = 'Calypsocotizaciones';
     public $timestamps = false;
+    protected $fillable = ['nombre', 'telefono', 'correo', 'fecha', 'lugar', 'mensaje'];
 }

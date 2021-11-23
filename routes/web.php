@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EquipoController;
+use App\Http\Controllers\DjcotizacionController;
+use App\Http\Controllers\CalypsocotizacionController;
+use App\Http\Controllers\ContactoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,21 +21,37 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('equipos', function () {
-    return view('equipos');
-});
+// Route::get('equipos', function () {
+//     return view('equipos');
+// });
 
-Route::get('dluxdj', function () {
-    return view('dluxDJ');
-});
+Route::get('equipos', [EquipoController::class, 'create']);
 
-Route::get('grupocalypso', function () {
-    return view('grupoCalypso');
-});
+Route::resource('equipo', EquipoController::class);
 
-Route::get('contacto', function () {
-    return view('contacto');
-});
+// Route::get('dluxdj', function () {
+//     return view('dluxDJ');
+// });
+
+Route::get('dluxdj', [DjcotizacionController::class, 'create']);
+
+Route::resource('djcotizacion', DjcotizacionController::class);
+
+// Route::get('grupocalypso', function () {
+//     return view('grupoCalypso');
+// });
+
+Route::get('grupocalypso', [CalypsocotizacionController::class, 'create']);
+
+Route::resource('calypsocotizacion', CalypsocotizacionController::class);
+
+// Route::get('contacto', function () {
+//     return view('contacto');
+// });
+
+Route::get('contactos', [ContactoController::class, 'create']);
+
+Route::resource('contacto', ContactoController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

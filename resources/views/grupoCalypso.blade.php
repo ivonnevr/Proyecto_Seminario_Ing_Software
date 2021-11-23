@@ -68,7 +68,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <a class="nav-link" href="grupocalypso">Grupo Calypso</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto">Contacto</a>
+                <a class="nav-link" href="contactos">Contacto</a>
               </li>
             </ul>
           </div>
@@ -132,7 +132,8 @@ https://templatemo.com/tm-546-sixteen-clothing
   
             <br><br><br>
   
-            <form action="#" method="POST">
+            <form action="{{ route('calypsocotizacion.store') }}" method="POST">
+              @csrf
               <div class="one-half">
                 <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre completo" required>
               </div>

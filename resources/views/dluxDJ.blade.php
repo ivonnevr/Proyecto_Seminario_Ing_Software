@@ -68,7 +68,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <a class="nav-link" href="grupocalypso">Grupo Calypso</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto">Contacto</a>
+                <a class="nav-link" href="contactos">Contacto</a>
               </li>
             </ul>
           </div>
@@ -347,7 +347,8 @@ https://templatemo.com/tm-546-sixteen-clothing
 
           <br><br><br>
 
-          <form action="#" method="POST">
+          <form action="{{ route('djcotizacion.store') }}" method="POST">
+            @csrf
             <div class="one-half">
               <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre completo" required>
             </div>
@@ -363,12 +364,12 @@ https://templatemo.com/tm-546-sixteen-clothing
             <div class="one-half">
               <select name="paquete" class="form-control" required>
                 <option value="none" disabled selected>-- Seleccione el paquete de su interés --</option>
-                <option value="mini">Paquete mini</option>
-                <option value="basico">Paquete básico</option>
-                <option value="junior">Paquete junior</option>
-                <option value="plus">Paquete plus</option>
-                <option value="diviertas">Paquete diviertas</option>
-                <option value="master">Paquete master</option>
+                <option value="Paquete mini">Paquete mini</option>
+                <option value="Paquete básico">Paquete básico</option>
+                <option value="Paquete junior">Paquete junior</option>
+                <option value="Paquete plus">Paquete plus</option>
+                <option value="Paquete diviertas">Paquete diviertas</option>
+                <option value="Paquete master">Paquete master</option>
               </select>
             </div>
             <div class="one-half last">

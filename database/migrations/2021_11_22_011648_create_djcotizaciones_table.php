@@ -16,10 +16,10 @@ class CreateDjcotizacionesTable extends Migration
         Schema::create('djcotizaciones', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 100);
-            $table->string('telefono', 15);
+            $table->string('telefono', 30);
             $table->string('correo', 50);
             $table->date('fecha');
-            $table->string('paquete', 25);
+            $table->string('paquete', 30);
             $table->string('lugar', 50);
             $table->string('mensaje', 255);
         });

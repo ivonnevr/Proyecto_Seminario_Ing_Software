@@ -10,4 +10,5 @@ class Djcotizacion extends Model
     use HasFactory;
     protected $table = 'Djcotizaciones';
     public $timestamps = false;
+    protected $fillable = ['nombre', 'telefono', 'correo', 'fecha', 'paquete', 'lugar', 'mensaje'];
 }

@@ -69,7 +69,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <a class="nav-link" href="grupocalypso">Grupo Calypso</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="contacto">Contacto</a>
+                <a class="nav-link" href="contactos">Contacto</a>
               </li>
             </ul>
           </div>
@@ -147,26 +147,27 @@ https://templatemo.com/tm-546-sixteen-clothing
             </div>
             <div class="col-md-8">
               <div class="contact-form">
-                <form id="contact" action="" method="post">
+                <form action="{{ route('contacto.store') }}" method="POST">
+                  @csrf
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <fieldset>
-                        <input name="name" type="text" class="form-control" id="name" placeholder="Nombre completo" required="">
+                        <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre completo" required="">
                       </fieldset>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <fieldset>
-                        <input name="phone" type="text" class="form-control" id="phone" placeholder="Teléfono" required="">
+                        <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Teléfono" required="">
                       </fieldset>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <fieldset>
-                        <input name="email" type="text" class="form-control" id="email" placeholder="Correo electrónico" required="">
+                        <input name="correo" type="text" class="form-control" id="correo" placeholder="Correo electrónico" required="">
                       </fieldset>
                     </div>
                     <div class="col-lg-12">
                       <fieldset>
-                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Mensaje" required=""></textarea>
+                        <textarea name="mensaje" rows="6" class="form-control" id="mensaje" placeholder="Mensaje" required=""></textarea>
                       </fieldset>
                     </div>
                     <div class="col-lg-12">

@@ -9,4 +9,5 @@ class Equipo extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $fillable = ['nombre', 'telefono', 'correo', 'fecha', 'equipo', 'lugar', 'mensaje'];
 }

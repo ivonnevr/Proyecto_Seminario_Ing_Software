@@ -16,7 +16,7 @@ class CreateCalypsocotizacionesTable extends Migration
         Schema::create('calypsocotizaciones', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 100);
-            $table->string('telefono', 15);
+            $table->string('telefono', 30);
             $table->string('correo', 50);
             $table->date('fecha');
             $table->string('lugar', 50);

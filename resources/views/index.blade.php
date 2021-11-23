@@ -68,7 +68,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <a class="nav-link" href="grupocalypso">Grupo Calypso</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto">Contacto</a>
+                <a class="nav-link" href="contactos">Contacto</a>
               </li>
             </ul>
           </div>

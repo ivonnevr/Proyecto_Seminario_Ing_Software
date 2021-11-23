@@ -19,7 +19,7 @@ class DjcotizacionFactory extends Factory
             'nombre' => $this->faker->name(),
             'telefono' => $this->faker->phoneNumber(),
             'correo' => $this->faker->unique()->safeEmail(),
-            'fecha' => $this->faker->date(),
+            'fecha' => $this->faker->dateTimeBetween($startDate = 'now', $endDate = '+4 weeks'),
             'paquete' => $this->faker->randomElement(['Paquete mini', 'Paquete básico', 'Paquete junior', 'Paquete plus', 'Paquete diviertas', 'master']),
             'lugar' => $this->faker->randomElement(['Tonalá', 'Puerto Vallarta', 'Morelia']),
             'mensaje' => $this->faker->paragraph(),

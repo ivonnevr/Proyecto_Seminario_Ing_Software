@@ -19,7 +19,7 @@ class EquipoFactory extends Factory
             'nombre' => $this->faker->name(),
             'telefono' => $this->faker->phoneNumber(),
             'correo' => $this->faker->unique()->safeEmail(),
-            'fecha' => $this->faker->date(),
+            'fecha' => $this->faker->dateTimeBetween($startDate = 'now', $endDate = '+4 weeks'),
             'equipo' => $this->faker->randomElement(['Pantallas', 'Sonido e iluminación', 'Micrófonos']),
             'lugar' => $this->faker->randomElement(['Tonalá', 'Puerto Vallarta', 'Morelia']),
             'mensaje' => $this->faker->paragraph(),

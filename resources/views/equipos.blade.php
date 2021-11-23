@@ -68,7 +68,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <a class="nav-link" href="grupocalypso">Grupo Calypso</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto">Contacto</a>
+                <a class="nav-link" href="contactos">Contacto</a>
               </li>
             </ul>
           </div>
@@ -160,7 +160,8 @@ https://templatemo.com/tm-546-sixteen-clothing
 
           <br><br><br>
 
-          <form action="#" method="POST">
+          <form action="{{ route('equipo.store') }}" method="POST">
+            @csrf
             <div class="one-half">
               <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre completo" required>
             </div>
@@ -174,11 +175,11 @@ https://templatemo.com/tm-546-sixteen-clothing
               <input type="date" class="form-control" name="fecha" id="fecha" required>
             </div>
             <div class="one-half">
-              <select name="equipo" class="form-control" required>
+              <select name="equipo" id="equipo" class="form-control" required>
                 <option value="none" disabled selected>-- Seleccione el equipo de su interés --</option>
-                <option value="pantalla">Pantalla</option>
-                <option value="sonido e iluminacion">Sonido e iluminación</option>
-                <option value="microfono">Micrófono</option>
+                <option value="Pantalla">Pantalla</option>
+                <option value="Sonido e iluminación">Sonido e iluminación</option>
+                <option value="Micrófono">Micrófono</option>
               </select>
             </div>
             <div class="one-half last">
