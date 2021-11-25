@@ -29,6 +29,7 @@
         <div class="py-4 text-gray-500 dark:text-gray-400">
           <a
             class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
+            href="/index"
           >
             Audiovisuales Kanek
           </a>
@@ -44,7 +45,7 @@
               <!-- text-gray-800 dark:text-gray-100 -->
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="../audiovisuales"
+                href="{{ route('equipo.index') }}"
               >
                 <img src="{{ asset('img/audiovisuales.png') }}" width="20px">
                 <span class="ml-4">Equipos audiovisuales</span>
@@ -55,7 +56,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="../dlux"
+                href="{{ route('djcotizacion.index') }}"
               >
                 <img src="{{ asset('img/dj.png') }}" width="20px">
                 <span class="ml-4">DLUX DJ</span>
@@ -64,7 +65,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="../calypso"
+                href="{{ route('calypsocotizacion.index') }}"
               >
                 <img src="{{ asset('img/calypso.png') }}" width="20px">
                 <span class="ml-4">Calypso</span>
@@ -73,11 +74,16 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="../contacto"
+                href="{{ route('contacto.index') }}"
               >
                 <img src="{{ asset('img/contacto.png') }}" width="20px">
                 <span class="ml-4">Contacto</span>
               </a>
+            </li>
+            <li class="relative px-6 py-3">
+              <div align="center">
+                <img src="{{ asset('img/logo.png') }}" width="100px">
+              </div>
             </li>
           </ul>
         </div>
@@ -109,6 +115,7 @@
         <div class="py-4 text-gray-500 dark:text-gray-400">
           <a
             class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
+            href="/index"
           >
             Audiovisuales Kanek
           </a>
@@ -124,10 +131,10 @@
               <!-- text-gray-800 dark:text-gray-100 -->
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="../audiovisuales"
+                href="{{ route('equipo.index') }}"
               >
                 <img src="{{ asset('img/audiovisuales.png') }}" width="20px">
-                <span class="ml-4">Audiovisuales Kanek</span>
+                <span class="ml-4">Equipos audiovisuales</span>
               </a>
             </li>
           </ul>
@@ -135,7 +142,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="../dlux"
+                href="{{ route('djcotizacion.index') }}"
               >
                 <img src="{{ asset('img/dj.png') }}" width="20px">
                 <span class="ml-4">DLUX DJ</span>
@@ -144,7 +151,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="../calypso"
+                href="{{ route('calypsocotizacion.index') }}"
               >
                 <img src="{{ asset('img/calypso.png') }}" width="20px">
                 <span class="ml-4">Calypso</span>
@@ -153,7 +160,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="../contacto"
+                href="{{ route('contacto.index') }}"
               >
                 <img src="{{ asset('img/contacto.png') }}" width="20px">
                 <span class="ml-4">Contacto</span>
@@ -323,6 +330,7 @@
     </div>
     @endauth
 
+    @guest
     <br><br><br><br><br>
     <main class="h-full pb-16 overflow-y-auto">
       <div class="container flex flex-col items-center px-6 mx-auto">
@@ -352,6 +360,7 @@
         </p>
       </div>
     </main>
+    @endguest
 
   </body>
 </html>

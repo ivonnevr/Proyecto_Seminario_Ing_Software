@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EquipoController;
+use App\Http\Controllers\DjcotizacionController;
+use App\Http\Controllers\CalypsocotizacionController;
+use App\Http\Controllers\ContactoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,25 +17,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('audiovisuales', function () {
-    return view('equipo-audiovisual');
-});
+// Route::get('audiovisuales', function () {
+//     return view('equipo-audiovisual');
+// });
 
-Route::get('dlux', function () {
-    return view('dlux-dj');
-});
+// Route::get('audiovisuales', [EquipoController::class, 'index']);
 
-Route::get('calypso', function () {
-    return view('calypso');
-});
+Route::resource('equipo', EquipoController::class);
 
-Route::get('contacto', function () {
-    return view('contacto');
-});
+// Route::get('dlux', function () {
+//     return view('dlux-dj');
+// });
 
-//Modificar esta ruta con la vista del sistema para los usuarios
+// Route::get('dlux', [DjcotizacionController::class, 'index']);
+
+Route::resource('djcotizacion', DjcotizacionController::class);
+
+// Route::get('calypso', function () {
+//     return view('calypso');
+// });
+
+// Route::get('calypso', [CalypsocotizacionController::class, 'index']);
+
+Route::resource('calypsocotizacion', CalypsocotizacionController::class);
+
+// Route::get('contacto', function () {
+//     return view('contacto');
+// });
+
+// Route::get('contacto', [ContactoController::class, 'index']);
+
+Route::resource('contacto', ContactoController::class);
+
 Route::get('/', function () {
     return view('auth/windmill-login');
+});
+
+Route::get('/index', function () {
+    return view('index');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
