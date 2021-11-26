@@ -9,4 +9,5 @@ class Calypsocotizacion extends Model
 {
     protected $table = 'Calypsocotizaciones';
     use HasFactory;
+    public $timestamps = false;
 }

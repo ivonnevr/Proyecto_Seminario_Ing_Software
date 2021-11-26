@@ -59,7 +59,7 @@ class EquipoController extends Controller
      */
     public function edit(Equipo $equipo)
     {
-        return view('equipoForm');
+        return view('equipoForm', compact('equipo'));
     }
 
     /**
@@ -71,7 +71,17 @@ class EquipoController extends Controller
      */
     public function update(Request $request, Equipo $equipo)
     {
-        //
+        $request->validate([
+            'nombre' => ['required', 'string', 'min:3', 'max:255'],
+            'telefono' => ['required', 'string', 'min:10', 'max:255'],
+            'correo' => 'required|string|min:10|max:255',
+            'fecha' => 'required|string|min:10|max:30',
+            'equipo' => 'required',
+            'lugar' => 'required',
+            'mensaje' => 'required',
+        ]);
+        Equipo::where('id', $equipo->id)->update($request->except('_token', '_method'));
+        return redirect()->route('equipo.show', $equipo);
     }
 
     /**

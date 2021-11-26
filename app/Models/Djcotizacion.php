@@ -9,4 +9,5 @@ class Djcotizacion extends Model
 {
     protected $table = 'Djcotizaciones';
     use HasFactory;
+    public $timestamps = false;
 }

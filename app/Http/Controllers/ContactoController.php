@@ -58,7 +58,7 @@ class ContactoController extends Controller
      */
     public function edit(Contacto $contacto)
     {
-        //
+        return view('contactoForm', compact('contacto'));
     }
 
     /**
@@ -70,7 +70,14 @@ class ContactoController extends Controller
      */
     public function update(Request $request, Contacto $contacto)
     {
-        //
+        $request->validate([
+            'nombre' => ['required', 'string', 'min:3', 'max:255'],
+            'telefono' => ['required', 'string', 'min:10', 'max:255'],
+            'correo' => 'required|string|min:10|max:255',
+            'mensaje' => 'required',
+        ]);
+        Contacto::where('id', $contacto->id)->update($request->except('_token', '_method'));
+        return redirect()->route('contacto.show', $contacto);
     }
 
     /**

@@ -58,7 +58,7 @@ class CalypsocotizacionController extends Controller
      */
     public function edit(Calypsocotizacion $calypsocotizacion)
     {
-        //
+        return view('calypsoForm', compact('calypsocotizacion'));
     }
 
     /**
@@ -70,7 +70,16 @@ class CalypsocotizacionController extends Controller
      */
     public function update(Request $request, Calypsocotizacion $calypsocotizacion)
     {
-        //
+        $request->validate([
+            'nombre' => ['required', 'string', 'min:3', 'max:255'],
+            'telefono' => ['required', 'string', 'min:10', 'max:255'],
+            'correo' => 'required|string|min:10|max:255',
+            'fecha' => 'required|string|min:10|max:30',
+            'lugar' => 'required',
+            'mensaje' => 'required',
+        ]);
+        Calypsocotizacion::where('id', $calypsocotizacion->id)->update($request->except('_token', '_method'));
+        return redirect()->route('calypsocotizacion.show', $calypsocotizacion);
     }
 
     /**

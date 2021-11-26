@@ -58,7 +58,7 @@ class DjcotizacionController extends Controller
      */
     public function edit(Djcotizacion $djcotizacion)
     {
-        //
+        return view('dluxdjForm', compact('djcotizacion'));
     }
 
     /**
@@ -70,7 +70,17 @@ class DjcotizacionController extends Controller
      */
     public function update(Request $request, Djcotizacion $djcotizacion)
     {
-        //
+        $request->validate([
+            'nombre' => ['required', 'string', 'min:3', 'max:255'],
+            'telefono' => ['required', 'string', 'min:10', 'max:255'],
+            'correo' => 'required|string|min:10|max:255',
+            'fecha' => 'required|string|min:10|max:30',
+            'paquete' => 'required',
+            'lugar' => 'required',
+            'mensaje' => 'required',
+        ]);
+        Djcotizacion::where('id', $djcotizacion->id)->update($request->except('_token', '_method'));
+        return redirect()->route('djcotizacion.show', $djcotizacion);
     }
 
     /**
