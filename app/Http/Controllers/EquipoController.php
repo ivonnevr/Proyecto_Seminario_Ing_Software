@@ -38,17 +38,22 @@ class EquipoController extends Controller
     {
         $request->validate([
             'nombre' => ['required', 'string', 'min:3', 'max:255'],
-            'telefono' => ['required', 'string', 'min:10', 'max:255'],
+            'telefono' => ['required', 'string', 'min:10', 'max:30'],
             'correo' => 'required|string|min:10|max:255',
             'fecha' => 'required|string|min:10|max:30',
             'equipo' => 'required',
-            'lugar' => 'required',
-            'mensaje' => 'required',
+            'lugar' => 'required|string|min:5',
+            'mensaje' => 'required|string|min:5|max:255',
         ]);
         Equipo::create($request->all());
         // return view('equipos');
         // return redirect()->route('equipo.create');
-        return redirect('equipos');
+        echo "
+            <script>
+                alert('Formulario enviado correctamente, en breve nos pondremos en contacto con usted.');
+                window.location= 'equipos';
+            </script>";
+        // return redirect('equipos');
     }
 
     /**

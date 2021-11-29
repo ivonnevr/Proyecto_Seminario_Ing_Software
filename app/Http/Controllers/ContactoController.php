@@ -39,14 +39,19 @@ class ContactoController extends Controller
         // dd('La info sí llega aquí');
         $request->validate([
             'nombre' => ['required', 'string', 'min:3', 'max:255'],
-            'telefono' => ['required', 'string', 'min:10', 'max:255'],
+            'telefono' => ['required', 'string', 'min:10', 'max:30'],
             'correo' => 'required|string|min:10|max:255',
-            'mensaje' => 'required',
+            'mensaje' => 'required|string|min:5|max:255',
         ]);
         Contacto::create($request->all());
         // return view('contacto');
         // return redirect()->route('contactos');
-        return redirect('contactos');
+        echo "
+            <script>
+                alert('Formulario enviado correctamente, en breve nos pondremos en contacto con usted.');
+                window.location= 'contactos';
+            </script>";
+        // return redirect('contactos');
     }
 
     /**

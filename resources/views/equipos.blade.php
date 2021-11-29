@@ -164,15 +164,27 @@ https://templatemo.com/tm-546-sixteen-clothing
             @csrf
             <div class="one-half">
               <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre completo" required>
+              @error('nombre')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+              @enderror
             </div>
             <div class="one-half last">
-              <input type="tel" class="form-control" name="telefono" id="telefono" placeholder="Teléfono" required>
+              <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Teléfono" required>
+              @error('telefono')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+              @enderror
             </div>
             <div class="one-half">
               <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo electrónico" required>
+              @error('correo')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+              @enderror
             </div>
             <div class="one-half last">
               <input type="date" class="form-control" name="fecha" id="fecha" required>
+              @error('fecha')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+              @enderror
             </div>
             <div class="one-half">
               <select name="equipo" id="equipo" class="form-control" required>
@@ -181,12 +193,21 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <option value="Sonido e iluminación">Sonido e iluminación</option>
                 <option value="Micrófono">Micrófono</option>
               </select>
+              @error('equipo')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+              @enderror
             </div>
             <div class="one-half last">
               <input type="text" class="form-control" name="lugar" id="lugar" placeholder="Lugar del evento" required>
+              @error('lugar')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+              @enderror
             </div>
             <div class="one-half">
               <textarea name="mensaje" rows="2" class="form-control" id="mensaje" placeholder="Mensaje" required></textarea>
+              @error('mensaje')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+              @enderror
             </div>
             <br><br><br><br><br><br><br><br><br><br><br><br>
             <div class="col-lg-12" align="center">

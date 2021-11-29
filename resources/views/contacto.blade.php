@@ -153,21 +153,33 @@ https://templatemo.com/tm-546-sixteen-clothing
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <fieldset>
                         <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre completo" required="">
+                        @error('nombre')
+                          <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+                        @enderror
                       </fieldset>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <fieldset>
                         <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Teléfono" required="">
+                        @error('telefono')
+                          <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+                        @enderror
                       </fieldset>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <fieldset>
                         <input name="correo" type="text" class="form-control" id="correo" placeholder="Correo electrónico" required="">
+                        @error('correo')
+                          <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+                        @enderror
                       </fieldset>
                     </div>
                     <div class="col-lg-12">
                       <fieldset>
                         <textarea name="mensaje" rows="6" class="form-control" id="mensaje" placeholder="Mensaje" required=""></textarea>
+                        @error('mensaje')
+                          <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+                        @enderror
                       </fieldset>
                     </div>
                     <div class="col-lg-12">
